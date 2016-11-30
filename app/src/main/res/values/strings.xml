@@ -9,4 +9,7 @@
     <string name="favorite">お気に入りリスト</string>
     <string name="company">企業一覧</string>
     <string name="search">検索</string>
+
+    <string name="user_action">仕事を探す</string>
+    <string name="company_action">依頼する</string>
 </resources>

@@ -9,9 +9,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    Button mUserAction;
+    Button mCompanyAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +32,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        mUserAction = (Button)findViewById(R.id.user_action);
+        mCompanyAction = (Button )findViewById(R.id.company_action);
+        mUserAction.setOnClickListener(this);
+        mCompanyAction.setOnClickListener(this);
     }
 
     @Override
@@ -50,11 +59,10 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_search) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_list) {
 
         } else if (id == R.id.nav_favorite) {
@@ -64,5 +72,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.user_action:
+
+                break;
+
+            case R.id.company_action:
+
+                break;
+
+            default:
+                break;
+        }
     }
 }
