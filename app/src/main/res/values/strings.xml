@@ -12,4 +12,9 @@
 
     <string name="user_action">仕事を探す</string>
     <string name="company_action">依頼する</string>
+
+    <string name="attention">この度は〇〇サービスの利用を検討いただきありがとうございます。このサービスは、働きたい人と会社とのマッチングをサポートするサービスです。主な概要はこちらからご覧ください。\nhogehoge\nなお、次に進むボタンを押された際は下記の利用規約に同意したものとみなしますのでご注意ください。\n\n利用規約\nhogehogehogehoge</string>
+
+    <string name="next">進む</string>
+    <string name="back">戻る</string>
 </resources>

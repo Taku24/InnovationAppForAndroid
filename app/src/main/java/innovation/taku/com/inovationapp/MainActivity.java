@@ -1,5 +1,6 @@
 package innovation.taku.com.inovationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -82,7 +83,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.company_action:
-
+                Intent intent = new Intent(this, CompanyActivity.class);
+                startActivity(intent);
                 break;
 
             default:
