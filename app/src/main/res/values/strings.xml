@@ -17,4 +17,8 @@
 
     <string name="next">進む</string>
     <string name="back">戻る</string>
+
+    <string name="about_job">仕事の依頼について</string>
+
+    <string name="write_company">仕事内容を記入</string>
 </resources>

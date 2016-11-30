@@ -1,5 +1,6 @@
 package innovation.taku.com.inovationapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -27,6 +28,8 @@ public class CompanyActivity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.next:
+                Intent intent = new Intent(this, WriteCompanyActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.back:
