@@ -48,7 +48,7 @@
                         android:id="@+id/edit_company_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="企業名"
+                        android:hint="@string/company_name"
                         android:inputType="text" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -64,7 +64,7 @@
                         android:id="@+id/edit_people"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="募集人員"
+                        android:hint="@string/require_people"
                         android:inputType="text" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -75,7 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/input_layout_people"
                     android:layout_marginTop="20dp"
-                    android:text="職業"
+                    android:text="@string/job"
                     android:textSize="15sp" />
 
                 <RadioGroup
@@ -87,37 +87,37 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="事務作業"
+                        android:text="@string/office_work"
                         android:textSize="15sp"></RadioButton>
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="営業"
+                        android:text="@string/sales"
                         android:textSize="15sp"></RadioButton>
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ゲーム制作"
+                        android:text="@string/create_game"
                         android:textSize="15sp"></RadioButton>
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="企画・提案"
+                        android:text="@string/project"
                         android:textSize="15sp"></RadioButton>
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="サーバー作り"
+                        android:text="@string/crete_server"
                         android:textSize="15sp"></RadioButton>
 
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="動画投稿、編集"
+                        android:text="@string/post_movie"
                         android:textSize="15sp"></RadioButton>
 
                 </RadioGroup>
@@ -128,7 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/radio"
                     android:layout_marginTop="20dp"
-                    android:text="就業開始日"
+                    android:text="@string/start_job"
                     android:textSize="15sp" />
 
                 <DatePicker
@@ -148,7 +148,7 @@
                         android:id="@+id/edit_area_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="地域"
+                        android:hint="@string/area_name"
                         android:inputType="text" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -164,7 +164,7 @@
                         android:id="@+id/edit_phone_number"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="電話番号"
+                        android:hint="@string/phone_number"
                         android:inputType="number" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -181,7 +181,7 @@
                         android:id="@+id/edit_mail"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="メールアドレス"
+                        android:hint="@string/mail_address"
                         android:inputType="text" />
 
                 </android.support.design.widget.TextInputLayout>
@@ -193,14 +193,15 @@
                     android:layout_below="@+id/input_layout_mail"
                     android:layout_marginLeft="60dp"
                     android:layout_marginBottom="20dp"
-                    android:text="戻る" />
+                    android:text="@string/back" />
 
                 <Button
+                    android:id="@+id/create_job_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="180dp"
                     android:layout_marginTop="20dp"
-                    android:text="登録する"
+                    android:text="@string/create"
                     android:layout_alignParentBottom="false"
                     android:layout_alignBottom="@+id/back" />
 
