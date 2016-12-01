@@ -12,4 +12,35 @@
     tools:context="innovation.taku.com.inovationapp.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="57dp"
+        android:text="どちらかを選択してください"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/user_action"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:textSize="20sp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:text="@string/user_action" />
+
+    <Button
+        android:id="@+id/company_action"
+        android:layout_width="150dp"
+        android:layout_height="80dp"
+        android:textSize="20sp"
+        android:layout_alignLeft="@+id/user_action"
+        android:layout_alignStart="@+id/user_action"
+        android:layout_below="@+id/user_action"
+        android:layout_marginTop="63dp"
+        android:text="@string/company_action" />
+
 </RelativeLayout>

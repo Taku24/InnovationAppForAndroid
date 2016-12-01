@@ -1,8 +1,49 @@
 <resources>
-    <string name="app_name">InovationApp</string>
+    <string name="app_name">プロトタイプ</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+    <string name="favorite">お気に入りリスト</string>
+    <string name="company">企業一覧</string>
+    <string name="search">検索</string>
+
+    <string name="user_action">仕事を探す</string>
+    <string name="company_action">依頼する</string>
+
+    <string name="attention">この度は〇〇サービスの利用を検討いただきありがとうございます。このサービスは、働きたい人と会社とのマッチングをサポートするサービスです。主な概要はこちらからご覧ください。\nhogehoge\nなお、次に進むボタンを押された際は下記の利用規約に同意したものとみなしますのでご注意ください。\n\n利用規約\nhogehogehogehoge</string>
+
+    <string name="next">進む</string>
+    <string name="back">戻る</string>
+    <string name="create">登録する</string>
+
+    <string name="about_job">仕事の依頼について</string>
+
+    <string name="write_company">仕事内容を記入</string>
+
+    <string name="company_name">企業名</string>
+    <string name="error_company">企業名を入力してください</string>
+    <string name="require_people">募集人員</string>
+    <string name="error_people">募集人員を入力してください</string>
+    <string name="job">職業</string>
+    <string name="office_work">事務作業</string>
+    <string name="sales">営業</string>
+    <string name="create_game">ゲーム制作</string>
+    <string name="project">企画・提案</string>
+    <string name="crete_server">サーバー作り</string>
+    <string name="post_movie">動画投稿</string>
+    <string name="start_job">就業開始日</string>
+    <string name="area_name">地域名</string>
+    <string name="error_area">地域名を入力してください</string>
+    <string name="phone_number">電話番号</string>
+    <string name="error_phone">電話番号を入力してください</string>
+    <string name="mail_address">メールアドレス</string>
+    <string name="error_mail">メールアドレスを入力してください</string>
+
+    <string name="dialog_error_title">エラー</string>
+    <string name="dialog_error_message">入力不足の項目があります</string>
+    <string name="dialog_complete">登録が完了しました</string>
+
 </resources>
