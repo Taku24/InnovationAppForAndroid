@@ -20,11 +20,19 @@
         </activity>
 
         <activity
+            android:name=".Activity.FindJobActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
             android:name=".Activity.CompanyActivity"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".Activity.WriteCompanyActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".Activity.DetailActivity"
             android:screenOrientation="portrait" />
 
     </application>

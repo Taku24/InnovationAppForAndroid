@@ -39,6 +39,12 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
     @BindView(R.id.edit_people)
     EditText mEditPeople;
 
+    @BindView(R.id.input_layout_detail_job)
+    TextInputLayout mDetailJobLayout;
+
+    @BindView(R.id.edit_detail_job)
+    EditText mEditDetailJob;
+
     @BindView(R.id.input_layout_area_name)
     TextInputLayout mAreaLayout;
 
@@ -57,11 +63,12 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
     @BindView(R.id.edit_mail)
     EditText mEditMail;
 
-    private boolean errorCompany = false;
-    private boolean errorPeople = false;
-    private boolean errorArea = false;
-    private boolean errorPhone = false;
-    private boolean errorMail = false;
+    private boolean errorCompany = true;
+    private boolean errorPeople = true;
+    private boolean errorDetail = true;
+    private boolean errorArea = true;
+    private boolean errorPhone = true;
+    private boolean errorMail = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,12 +81,11 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (textView.getText().toString().trim().length() == 0) {
-                    setErrorMessage(mCompanyLayout, (String) getText(R.string.error_company));
                     errorCompany = true;
                 } else {
-                    mCompanyLayout.setErrorEnabled(false);
                     errorCompany = false;
                 }
+                setErrorMessage(mCompanyLayout, (String) getText(R.string.error_company), textView.getText().toString().trim().length());
                 return false;
             }
         });
@@ -87,12 +93,23 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (textView.getText().toString().trim().length() == 0) {
-                    setErrorMessage(mPeopleLayout, (String) getText(R.string.error_people));
                     errorPeople = true;
                 } else {
-                    mPeopleLayout.setErrorEnabled(false);
                     errorPeople = false;
                 }
+                setErrorMessage(mPeopleLayout, (String) getText(R.string.error_detail), textView.getText().toString().trim().length());
+                return false;
+            }
+        });
+        mEditDetailJob.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (textView.getText().toString().trim().length() == 0) {
+                    errorDetail = true;
+                } else {
+                    errorDetail = false;
+                }
+                setErrorMessage(mDetailJobLayout, (String) getText(R.string.error_people), textView.getText().toString().trim().length());
                 return false;
             }
         });
@@ -100,12 +117,11 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (textView.getText().toString().trim().length() == 0) {
-                    setErrorMessage(mAreaLayout, (String) getText(R.string.error_area));
                     errorArea = true;
                 } else {
-                    mAreaLayout.setErrorEnabled(false);
                     errorArea = false;
                 }
+                setErrorMessage(mAreaLayout, (String) getText(R.string.error_area), textView.getText().toString().trim().length());
                 return false;
             }
         });
@@ -113,12 +129,11 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (textView.getText().toString().trim().length() == 0) {
-                    setErrorMessage(mPhoneLayout, (String) getText(R.string.error_phone));
                     errorPhone = true;
                 } else {
-                    mPhoneLayout.setErrorEnabled(false);
                     errorPhone = false;
                 }
+                setErrorMessage(mPhoneLayout, (String) getText(R.string.error_phone), textView.getText().toString().trim().length());
                 return false;
             }
         });
@@ -126,12 +141,11 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 if (textView.getText().toString().trim().length() == 0) {
-                    setErrorMessage(mMailLayout, (String) getText(R.string.error_mail));
                     errorMail = true;
                 } else {
-                    mMailLayout.setErrorEnabled(false);
                     errorMail = false;
                 }
+                setErrorMessage(mMailLayout, (String) getText(R.string.error_mail), textView.getText().toString().trim().length());
                 return false;
             }
         });
@@ -157,8 +171,13 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    public void setErrorMessage(TextInputLayout textInputEditText, String errorMessage) {
-        textInputEditText.setError(errorMessage);
+    public void setErrorMessage(TextInputLayout textInputLayout, String errorMessage, int count) {
+        if(count == 0) {
+            textInputLayout.setError(errorMessage);
+        }
+        else {
+            textInputLayout.setErrorEnabled(false);
+        }
     }
 
     public void alertDialog(String title, String message, final boolean returnActivity) {
@@ -173,6 +192,14 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             intent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
                             startActivity(intent);
+                        }
+                        else {
+                            setErrorMessage(mCompanyLayout, (String) getText(R.string.error_company), mEditCompany.getText().toString().trim().length());
+                            setErrorMessage(mPeopleLayout, (String) getText(R.string.error_people), mEditPeople.getText().toString().trim().length());
+                            setErrorMessage(mDetailJobLayout, (String) getText(R.string.error_detail), mEditDetailJob.getText().toString().trim().length());
+                            setErrorMessage(mAreaLayout, (String) getText(R.string.error_area), mEditArea.getText().toString().trim().length());
+                            setErrorMessage(mPhoneLayout, (String) getText(R.string.error_phone), mEditPeople.getText().toString().trim().length());
+                            setErrorMessage(mMailLayout, (String) getText(R.string.error_mail), mEditMail.getText().toString().trim().length());
                         }
                     }
                 })
