@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
 
-    private void changeToolbarTitle(String title){
+    private void changeToolbarTitle(String title) {
         mToolbar.setTitle(title);
     }
 

@@ -8,12 +8,13 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import innovation.taku.com.inovationapp.R;
 
 /**
  * Created by TAKU on 2016/11/30.
  */
-public class CompanyActivity extends AppCompatActivity implements View.OnClickListener{
+public class CompanyActivity extends AppCompatActivity {
 
     @BindView(R.id.next)
     Button mNext;
@@ -26,24 +27,16 @@ public class CompanyActivity extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company);
         ButterKnife.bind(this);
-        mNext.setOnClickListener(this);
-        mBack.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.next:
-                Intent intent = new Intent(this, WriteCompanyActivity.class);
-                startActivity(intent);
-                break;
+    @OnClick(R.id.next)
+    void moveWriteCompanyActivity(){
+        Intent intent = new Intent(this, WriteCompanyActivity.class);
+        startActivity(intent);
+    }
 
-            case R.id.back:
-                finish();
-                break;
-
-            default:
-                break;
-        }
+    @OnClick(R.id.back)
+    void finishActivity(){
+        finish();
     }
 }

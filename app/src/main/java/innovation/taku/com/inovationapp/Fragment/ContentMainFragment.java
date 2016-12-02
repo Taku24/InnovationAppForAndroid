@@ -11,6 +11,7 @@ import android.widget.Button;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import innovation.taku.com.inovationapp.Activity.CompanyActivity;
 import innovation.taku.com.inovationapp.Activity.FindJobActivity;
 import innovation.taku.com.inovationapp.R;
@@ -18,7 +19,7 @@ import innovation.taku.com.inovationapp.R;
 /**
  * Created by TAKU on 2016/12/01.
  */
-public class ContentMainFragment extends Fragment implements View.OnClickListener{
+public class ContentMainFragment extends Fragment {
 
     @BindView(R.id.user_action)
     Button mUserAction;
@@ -28,7 +29,7 @@ public class ContentMainFragment extends Fragment implements View.OnClickListene
 
     private Context mContext;
 
-    public ContentMainFragment(Context context){
+    public ContentMainFragment(Context context) {
         mContext = context;
     }
 
@@ -36,27 +37,19 @@ public class ContentMainFragment extends Fragment implements View.OnClickListene
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
-        mUserAction.setOnClickListener(this);
-        mCompanyAction.setOnClickListener(this);
         return view;
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.user_action:
-                Intent intent  = new Intent(mContext, FindJobActivity.class);
-                startActivity(intent);
-                break;
+    @OnClick(R.id.user_action)
+    void moveFindJobActivity(){
+        Intent intent = new Intent(mContext, FindJobActivity.class);
+        startActivity(intent);
+    }
 
-            case R.id.company_action:
-                Intent intent1  = new Intent(mContext, CompanyActivity.class);
-                startActivity(intent1);
-                break;
-
-            default:
-                break;
-        }
+    @OnClick(R.id.company_action)
+    void moveCompanyActivity(){
+        Intent intent = new Intent(mContext, CompanyActivity.class);
+        startActivity(intent);
     }
 
 }
