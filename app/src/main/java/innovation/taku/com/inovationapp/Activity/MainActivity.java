@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import innovation.taku.com.inovationapp.Fragment.ContentListFragment;
 import innovation.taku.com.inovationapp.Fragment.ContentMainFragment;
+import innovation.taku.com.inovationapp.Fragment.ContentMyPageFragment;
 import innovation.taku.com.inovationapp.Fragment.ContentSearchFragment;
 import innovation.taku.com.inovationapp.R;
 
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 replaceFragment(new ContentListFragment());
                 changeToolbarTitle((String) getText(R.string.favorite));
                 break;
+
+            case R.id.nav_my_page:
+                replaceFragment(new ContentMyPageFragment());
+                changeToolbarTitle((String) getText(R.string.my_page));
 
             default:
                 break;

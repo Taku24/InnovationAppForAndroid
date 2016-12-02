@@ -35,6 +35,10 @@
             android:name=".Activity.DetailActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".Activity.PostUserActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 

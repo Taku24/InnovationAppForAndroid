@@ -180,7 +180,7 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-    public void alertDialog(String title, String message, final boolean returnActivity) {
+    private void alertDialog(String title, String message, final boolean returnActivity) {
         new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)

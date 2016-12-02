@@ -1,5 +1,6 @@
 package innovation.taku.com.inovationapp.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -44,6 +45,8 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
                 break;
 
             case R.id.next:
+                Intent intent = new Intent(this, PostUserActivity.class);
+                startActivity(intent);
                 break;
 
             case R.id.floating_button:
