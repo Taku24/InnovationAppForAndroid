@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="39dp"
+                    android:src="@drawable/user" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="10dp"
+                    android:text="ばしさん"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/program"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/user_name"
+                    android:layout_marginBottom="20dp"
+                    android:text="・得意なこと\n    プログラミング"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/program"
+                    android:layout_marginBottom="20dp"
+                    android:text="・個体値\n    やる気100\n    努力80\n    調査力10"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/status"
+                    android:layout_marginBottom="20dp"
+                    android:text="・住所\n    hoghogehogehoge"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/mail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/address"
+                    android:layout_marginBottom="20dp"
+                    android:text="・メールアドレス\n    taku178.24@hotmail.co.jp"
+                    android:textSize="18sp" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.NestedScrollView>
+
+</LinearLayout>
