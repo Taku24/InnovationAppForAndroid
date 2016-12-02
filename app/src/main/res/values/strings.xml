@@ -10,6 +10,7 @@
     <string name="favorite">お気に入りリスト</string>
     <string name="company">企業一覧</string>
     <string name="search">検索</string>
+    <string name="my_page">マイページ</string>
 
     <string name="user_action">仕事を探す</string>
     <string name="company_action">依頼する</string>
@@ -44,6 +45,11 @@
     <string name="error_phone">電話番号を入力してください</string>
     <string name="mail_address">メールアドレス</string>
     <string name="error_mail">メールアドレスを入力してください</string>
+
+    <string name="post_error_name">名前を入力してください</string>
+    <string name="post_error_address">住所を入力してください</string>
+    <string name="post_error_phone">電話番号を入力してください</string>
+    <string name="post_error_mail">メールアドレスを入力してください</string>
 
     <string name="dialog_error_title">エラー</string>
     <string name="dialog_error_message">入力不足の項目があります</string>
