@@ -27,12 +27,6 @@ public class ContentMainFragment extends Fragment {
     @BindView(R.id.company_action)
     Button mCompanyAction;
 
-    private Context mContext;
-
-    public ContentMainFragment(Context context) {
-        mContext = context;
-    }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
@@ -42,13 +36,13 @@ public class ContentMainFragment extends Fragment {
 
     @OnClick(R.id.user_action)
     void moveFindJobActivity(){
-        Intent intent = new Intent(mContext, FindJobActivity.class);
+        Intent intent = new Intent(getActivity(), FindJobActivity.class);
         startActivity(intent);
     }
 
     @OnClick(R.id.company_action)
     void moveCompanyActivity(){
-        Intent intent = new Intent(mContext, CompanyActivity.class);
+        Intent intent = new Intent(getActivity(), CompanyActivity.class);
         startActivity(intent);
     }
 
