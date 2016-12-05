@@ -155,8 +155,8 @@ public class WriteCompanyActivity extends AppCompatActivity {
         finish();
     }
 
-    @OnClick(R.id.next)
-    void judegeContent(){
+    @OnClick(R.id.create_job_content)
+    void judgeContent(){
         if (errorCompany || errorPeople || errorArea || errorPhone || errorMail) {
             alertDialog((String) getText(R.string.dialog_error_title), (String) getText(R.string.dialog_error_message), false);
         } else {
