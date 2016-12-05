@@ -15,12 +15,13 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import innovation.taku.com.inovationapp.R;
 
 /**
  * Created by TAKU on 2016/12/02.
  */
-public class PostUserActivity extends AppCompatActivity implements View.OnClickListener{
+public class PostUserActivity extends AppCompatActivity {
 
     @BindView(R.id.back)
     Button mBack;
@@ -62,15 +63,12 @@ public class PostUserActivity extends AppCompatActivity implements View.OnClickL
     private boolean errorAddress = true;
     private boolean errorPhone = true;
     private boolean errorMail = true;
-    private boolean errorOther = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post_user);
         ButterKnife.bind(this);
-        mBack.setOnClickListener(this);
-        mNext.setOnClickListener(this);
         mEditName.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -158,25 +156,18 @@ public class PostUserActivity extends AppCompatActivity implements View.OnClickL
                 .show();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
+    @OnClick(R.id.back)
+    void finishActivity(){
+        finish();
+    }
 
-            case R.id.back:
-                finish();
-                break;
-
-            case R.id.next:
-                if(errorName || errorAddress || errorPhone || errorMail){
-                    alertDialog((String) getText(R.string.dialog_error_title), (String) getText(R.string.dialog_error_message), false);
-                }
-                else {
-                    alertDialog("", (String) getText(R.string.dialog_complete), true);
-                }
-                break;
-
-            default:
-                break;
+    @OnClick(R.id.next)
+    void judegeContent(){
+        if(errorName || errorAddress || errorPhone || errorMail){
+            alertDialog((String) getText(R.string.dialog_error_title), (String) getText(R.string.dialog_error_message), false);
+        }
+        else {
+            alertDialog("", (String) getText(R.string.dialog_complete), true);
         }
     }
 }

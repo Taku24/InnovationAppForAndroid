@@ -11,12 +11,13 @@ import android.widget.Button;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+import butterknife.OnClick;
 import innovation.taku.com.inovationapp.R;
 
 /**
  * Created by TAKU on 2016/12/01.
  */
-public class DetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class DetailActivity extends AppCompatActivity {
 
     @BindView(R.id.back)
     Button mBack;
@@ -32,32 +33,26 @@ public class DetailActivity extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        mBack.setOnClickListener(this);
-        mNext.setOnClickListener(this);
-        mFavoriteButton.setOnClickListener(this);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.back:
-                finish();
-                break;
-
-            case R.id.next:
-                Intent intent = new Intent(this, PostUserActivity.class);
-                startActivity(intent);
-                break;
-
-            case R.id.floating_button:
-                new AlertDialog.Builder(this)
-                        .setTitle(null)
-                        .setMessage("お気に入りリストに追加しました")
-                        .setPositiveButton("OK", null)
-                        .show();
-
-            default:
-                break;
-        }
+    @OnClick(R.id.back)
+    void finishActivity(){
+        finish();
     }
+
+    @OnClick(R.id.next)
+    void movePostUserActivity(){
+        Intent intent = new Intent(this, PostUserActivity.class);
+        startActivity(intent);
+    }
+
+    @OnClick(R.id.floating_button)
+    void addFavoriteList(){
+        new AlertDialog.Builder(this)
+                .setTitle(null)
+                .setMessage("お気に入りリストに追加しました")
+                .setPositiveButton("OK", null)
+                .show();
+    }
+
 }
