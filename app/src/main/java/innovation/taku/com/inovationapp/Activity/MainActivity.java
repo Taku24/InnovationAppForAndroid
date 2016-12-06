@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ButterKnife.bind(this);
         Fragment mFragment = getSupportFragmentManager().findFragmentById(R.id.frame_layout);
         if (mFragment == null) {
-            mFragment = new ContentMainFragment(this);
+            mFragment = new ContentMainFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.add(R.id.frame_layout, mFragment);
             fragmentTransaction.commit();
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (item.getItemId()) {
             case R.id.nav_home:
-                replaceFragment(new ContentMainFragment(this));
+                replaceFragment(new ContentMainFragment());
                 changeToolbarTitle((String) getText(R.string.home));
                 break;
 
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fragmentTransaction.commit();
     }
 
-    private void changeToolbarTitle(String title){
+    private void changeToolbarTitle(String title) {
         mToolbar.setTitle(title);
     }
 

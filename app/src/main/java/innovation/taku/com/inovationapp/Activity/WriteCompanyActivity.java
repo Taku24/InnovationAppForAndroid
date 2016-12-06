@@ -14,12 +14,13 @@ import android.widget.TextView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import innovation.taku.com.inovationapp.R;
 
 /**
  * Created by TAKU on 2016/11/30.
  */
-public class WriteCompanyActivity extends AppCompatActivity implements View.OnClickListener {
+public class WriteCompanyActivity extends AppCompatActivity {
 
     @BindView(R.id.create_job_content)
     Button mNext;
@@ -75,8 +76,6 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_company);
         ButterKnife.bind(this);
-        mBack.setOnClickListener(this);
-        mNext.setOnClickListener(this);
         mEditCompany.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
@@ -151,23 +150,17 @@ public class WriteCompanyActivity extends AppCompatActivity implements View.OnCl
         });
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.back:
-                finish();
-                break;
+    @OnClick(R.id.back)
+    void finishActivity(){
+        finish();
+    }
 
-            case R.id.create_job_content:
-                if (errorCompany || errorPeople || errorArea || errorPhone || errorMail) {
-                    alertDialog((String) getText(R.string.dialog_error_title), (String) getText(R.string.dialog_error_message), false);
-                } else {
-                    alertDialog("", (String) getText(R.string.dialog_complete), true);
-                }
-                break;
-
-            default:
-                break;
+    @OnClick(R.id.create_job_content)
+    void judgeContent(){
+        if (errorCompany || errorPeople || errorArea || errorPhone || errorMail) {
+            alertDialog((String) getText(R.string.dialog_error_title), (String) getText(R.string.dialog_error_message), false);
+        } else {
+            alertDialog("", (String) getText(R.string.dialog_complete), true);
         }
     }
 
