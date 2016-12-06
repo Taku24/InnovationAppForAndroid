@@ -137,6 +137,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="10dp"
+                        android:background="@drawable/circle_yellow_button"
                         android:text="戻る" />
 
                     <Button
@@ -147,6 +148,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
                         android:layout_marginBottom="10dp"
+                        android:background="@drawable/circle_blue_button"
                         android:text="申し込む" />
 
                 </RelativeLayout>

@@ -29,6 +29,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
+        android:background="@drawable/circle_blue_button"
         android:text="@string/user_action"
         android:textSize="20sp" />
 
@@ -40,6 +41,7 @@
         android:layout_alignStart="@+id/user_action"
         android:layout_below="@+id/user_action"
         android:layout_marginTop="63dp"
+        android:background="@drawable/circle_blue_button"
         android:text="@string/company_action"
         android:textSize="20sp" />
 
