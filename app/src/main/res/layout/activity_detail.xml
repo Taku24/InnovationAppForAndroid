@@ -29,6 +29,15 @@
 
     </android.support.v7.widget.Toolbar>
 
+    <View
+        android:id="@+id/shadow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@drawable/background_shadow"
+        android:layout_below="@+id/toolbar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/view2"
         android:layout_width="match_parent"
